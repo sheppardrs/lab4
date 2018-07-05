@@ -1,18 +1,278 @@
+$button-color:  #aaf0d1;
+$border-color: black;
+//$logo-color: #C06958;
+$logo-color: #FFFFFF;
+$background: rgb(55, 199, 145);
+$post-background: $background;
+//$background: #BEF0D2;
+//$post-background: #BEF0D2;
+$text-color: rgb(190, 15, 4);
+$accent-1: white;
+$accent-2: #A44A3F;
+
+
 body, html {
-  font-family: "Roboto", sans-serif;
-  background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+  font-family: "Roboto", slab;
+  //background: linear-gradient(to bottom, #FFFFFF 0%, $background 100%);
+  background: $background;
   height: 100%;
+  color: $logo-color;
+}
+
+#logo_bird {
+  font-size: 40pt;
+  color: $logo-color;
+  // box-shadow: 1pt 1pt 1pt;
+  margin: 0;
+  margin-right: 4pt;
+  letter-spacing: -1px;
 }
 
 .logo {
-  background-image: url('img/Sharity_Logo.png');
-  width: 100px;
-  height: 100px;
-  background-repeat: no-repeat;
-  background-size: contain;
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5%;
+  margin-top:  0;
+  color: $logo-color;
 }
+
+.logo-text {
+  margin: 0;
+  display:  flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-life {
+  font-size: 20pt;
+  margin: 0;
+  font-family: 'Galada', cursive;
+}
+
+.logo-slogan {
+  font-size: 12pt;
+  margin: 0;
+  font-family: 'IM Fell English SC', serif;
+}
+
 
 .active {
   color: pink;
+}
+
+// The Navbar
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.header li {
+  margin: 5pt;
+  list-style: none;
+  text-decoration: none;
+}
+
+.navlink {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+//  Post
+.post {
+  display: flex;
+  flex-direction: row;
+  color: $text-color;
+  //box-shadow: 5px 5px 5px grey;
+  border-style: solid;
+  border-width: thin;
+  border-color: $accent-1;
+  margin: 2%;
+  padding: 2pt 10pt 2pt 10pt;
+  background-color: $post-background;
+  width: auto;
+}
+
+.post img {
+  width: 15%;
+  height: 15%;
+}
+
+.post-box {
+  width: 80%;
+  padding-left: 5%;
+}
+
+// Show the title and buttons for edit, delete and heart
+.post-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-style: solid;
+  border-bottom-color: $accent-1;
+  border-bottom-width: thin;
+  text-transform: uppercase;
+}
+
+.post-header h4 {
+  align-self: flex-start;
+  color: white;
+}
+
+.post-title-link {
+  color: white;
+  text-decoration: none;
+}
+
+.post-button-link {
+  color: $text-color;
+}
+
+
+// Align the text/content of the post with the
+// arrow for viewing the full post
+.post-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-text div i {
+  align-self: flex-end;
+}
+
+// Full Post - the full page view of the post
+.full-post {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  box-shadow: 5px 5px 5px grey;
+  border: 3pt;
+  margin: 5%;
+  padding: 2pt 10pt 2pt 10pt;
+  background-color: $post-background;
+  width: auto;
+}
+
+.full-post-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-style: solid;
+  border-bottom-color: grey;
+  border-bottom-width: thin;
+  font-size: 32pt;
+  text-transform: uppercase;
+}
+
+.full-post-header img {
+  width: 15%;
+  height: 15%;
+}
+
+.full-post-button-link{
+  color: $accent-1;
+}
+
+i {
+  margin: 2pt;
+}
+
+#posts-section {
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+//ADD POST
+.add-post {
+  border-top: 3pt solid $accent-1;
+  border-bottom: 3pt solid $accent-1;
+  border-radius: 10pt;
+  padding: 3% 3% 3% 3%;
+  color: $accent-1;
+  height: 70vh;
+}
+
+input {
+  margin: 2%;
+}
+
+textarea {
+  margin: 2%;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: $accent-1;
+  background-color: inherit;
+  font-size: 12pt;
+  color: $accent-2;
+  text-align: center;
+}
+
+textarea:active {
+  box-shadow: gray;
+}
+textarea::placeholder {
+  color: $button-color;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#title-input {
+  width: 70%;
+}
+
+#tag-cover_url-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#tag-input {
+  width: 40%;
+}
+
+#cover_url-input {
+  width: 40%;
+}
+
+#content-input {
+  width: 90%;
+  height: 20vh;
+}
+
+.save-button {
+  border: solid;
+  width: 15%;
+  border-width: 1pt;
+  border-radius: 30pt;
+  background-color: $button-color;
+  color: $logo-color;
+}
+
+.save-button:hover {
+  background-color: darken($button-color, 10%);
+}
+
+.save-button i {
+  font-size: 22pt;
 }

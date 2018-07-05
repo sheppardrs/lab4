@@ -16,6 +16,7 @@
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
@@ -43,13 +44,16 @@
     "axios": "^0.18.0",
     "jquery": "^3.3.1",
     "lodash.debounce": "^4.0.8",
+    "marked": "^0.4.0",
     "postcss-loader": "^2.1.5",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-marked": "^0.3.1",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0"
   }
 }
