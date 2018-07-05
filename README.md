@@ -44,8 +44,18 @@ This gives the ```AddPost``` component the ```onSubmit``` prop of the ```updateP
 ## SinglePost from post.js
 This creates a ```FullPost``` with the props history for deleting, ```onDelete``` of ```deletePost``` and ```onSubmit``` of ```fetchPost``` for loading the post.
 
+## Posts from posts.js
+This container manages the list of all the posts by looping over the ```all``` field of the global state and creating ```Post``` component for each one.
 
+# Reducers
+## postReducer in post-reducer.js
+This manages the ```post``` field of the global state which stores the full currently selected post.
 
+## postsReducer in posts-reducer.js
+This manages the ```all``` field of the global state which stores the whole list of posts.
 
+# index.js
+Creates the redux store and loads the ```App``` component to the id ```main``` from index.html.
 
+# Running
 Run `yarn add --dev babel-preset-react babel-plugin-transform-class-properties` after copying if the compilation fails.
