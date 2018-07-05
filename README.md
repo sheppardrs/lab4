@@ -3,6 +3,9 @@
 July 2018
 Built from course notes and assignments as well as stack exchange and [youtube](https://www.youtube.com/watch?v=Td-2D-_7Y2E&index=20&list=PLoYCgNOIyGABj2GQSlDRjgvXtqfDxKm5b).
 
+# Possible Updates
+Pass an ```onEdit``` prop with a function that creates the link to the ```Post``` and ```FullPost``` components so that they are really just presentational. 
+
 # Functionality
 From the assignment:
   * Use routing to navigate to home, add a post, edit, and full post pages
