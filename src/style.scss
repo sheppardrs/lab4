@@ -1,13 +1,14 @@
 $button-color:  #aaf0d1;
 $border-color: black;
 //$logo-color: #C06958;
-$logo-color: #FFFFFF;
-$background: rgb(55, 199, 145);
+$logo-color: rgb(55, 199, 145);
+// $background: rgb(55, 199, 145);
+$background: white;
 $post-background: $background;
 //$background: #BEF0D2;
 //$post-background: #BEF0D2;
 $text-color: rgb(190, 15, 4);
-$accent-1: white;
+$accent-1: gray;
 $accent-2: #A44A3F;
 
 
@@ -125,11 +126,11 @@ nav {
 
 .post-header h4 {
   align-self: flex-start;
-  color: white;
+  color: $accent-1;
 }
 
 .post-title-link {
-  color: white;
+  color: $accent-1;
   text-decoration: none;
 }
 

@@ -16,8 +16,13 @@ export const ActionTypes = {
 
 
 // Some constants for interfacing with the API
-const ROOT_URL = 'https://cs52-blog.herokuapp.com/api';
-const API_KEY = '?key=r_blake';
+// For herokuapp given:
+// const ROOT_URL = 'https://cs52-blog.herokuapp.com/api';
+// For my server
+const ROOT_URL = 'http://localhost:9090/api';
+const API_KEY = '';
+// const API_KEY = '?key=r_blake';
+
 
 // get all the posts
 export function fetchPosts() {
