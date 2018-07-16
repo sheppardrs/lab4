@@ -17,6 +17,7 @@ class AddPost extends React.Component {
     this.componentWillMount = this.componentWillMount.bind(this);
   }
 
+  // set the values, works for edit and create
   componentWillMount() {
     // console.log('HERE is what we got for post', this.props.post);
     if (this.props.post) {

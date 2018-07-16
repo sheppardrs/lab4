@@ -14,6 +14,7 @@ import logger from 'redux-logger';
 import './style.scss';
 import App from './components/app';
 import reducers from './reducers';
+import { ActionTypes } from './actions';
 
 
 // For UI Design hardcoded posts
@@ -21,6 +22,7 @@ import reducers from './reducers';
 // const post2 = { id: 2, title: 'Chare-it', text: 'Give Efficiently, Know Your Impact, Find Your Friend.' };
 // const post3 = { id: 3, title: 'Give Some', text: 'Give Efficiently, Know Your Impact, Find Your Friend.' };
 // const posts = [post1, post2, post3];
+
 
 const store = createStore(reducers, { }, compose(
   applyMiddleware(thunk, logger),
@@ -30,7 +32,10 @@ const store = createStore(reducers, { }, compose(
 store.subscribe(() => console.log('Store Changed:', store.getState()));
 
 // store.dispatch({ type: 'FETCH_POSTS', payload: posts });
-
+const token = localStorage.getItem('token');
+if (token) {
+  store.dispatch({ type: ActionTypes.AUTH_USER });
+}
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Posts from '../containers/posts';
 import Controls from '../containers/controls';
 
@@ -8,39 +8,17 @@ import Controls from '../containers/controls';
 // import FullPost from './fullpost';
 import SinglePost from '../containers/post';
 import AddAPost from '../containers/addpost';
+import SignInUpAUser from '../containers/signInorUp';
 import EditAPost from '../containers/editpost';
+import Nav from '../components/nav';
+import RequireAuth from '../containers/requireAuth';
 // import AddPost from './addpost';
 
-function Logo() {
-  return (
-    <div className="logo">
-      <i id="logo_bird" className="fas fa-hand-holding-heart" />
-      <div className="logo-text">
-        <p className="logo-life">Sharity</p>
-        <p className="logo-slogan">Give More</p>
-      </div>
-    </div>
-  );
-}
 
 const About = (props) => {
   return <div>All there is to know about me</div>;
 };
 
-
-// Remove the two test posts when ready
-const Nav = (props) => {
-  return (
-    <nav>
-      <Logo />
-      <ul className="header">
-        <li><NavLink className="navlink" to="/" exact>Home</NavLink></li>
-        <li><NavLink className="navlink" to="/posts/new">Add Post</NavLink></li>
-        <li><NavLink className="navlink" to="/about">About</NavLink></li>
-      </ul>
-    </nav>
-  );
-};
 
 // For UI Design hardcoded posts
 // const post1 = { id: 1, title: 'Sharity', text: 'Give Efficiently, Know Your Impact, Find Your Friend.' };
@@ -81,10 +59,11 @@ const App = () => {
         <Nav />
         <Switch>
           <Route exact path="/" component={Welcome} />
-          <Route path="/posts/new" component={AddAPost} />
+          <Route path="/signin" component={SignInUpAUser} />
+          <Route path="/posts/new" component={RequireAuth(AddAPost)} />
           <Route path="/about" component={About} />
           <Route exact path="/posts/:postID" component={SinglePost} />
-          <Route exact path="/posts/:postID/edit" component={EditAPost} />
+          <Route exact path="/posts/:postID/edit" component={RequireAuth(EditAPost)} />
           {/* <Route exact
             path="/posts/:postID"
             render={props => (
