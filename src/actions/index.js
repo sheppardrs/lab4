@@ -124,6 +124,17 @@ export function deletePost(id, history) {
   };
 }
 
+export function likePost(id, history) {
+  return (dispatch) => {
+    axios.patch(`${ROOT_URL}/posts/${id}${API_KEY}`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      // history.push('/');
+      dispatch(fetchPosts());
+    }).catch((error) => {
+      // hit an error -> do something else
+      console.log('FAILED IN ACTION likePost');
+    });
+  };
+}
 // Action creators for signing in/out/up
 
 export function authError(error) {

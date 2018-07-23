@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import FullPost from '../components/fullpost';
-import { fetchPost, deletePost } from '../actions/index';
+import { fetchPost, deletePost, likePost } from '../actions/index';
 
 // this can be a dumb or smart component -
 // connect works either way
@@ -26,6 +26,7 @@ class SinglePost extends React.Component {
           post={this.props.post}
           onSelect={this.props.fetchPost}
           onDelete={this.props.deletePost}
+          onLike={this.props.likePost}
           history={this.props.history}
         />);
     } else {
@@ -58,4 +59,4 @@ const mapStateToProps = state => (
 // react-redux glue -- outputs Container that
 // knows state in properties
 // new way to connect with react router 4
-export default withRouter(connect(mapStateToProps, { fetchPost, deletePost })(SinglePost));
+export default withRouter(connect(mapStateToProps, { fetchPost, deletePost, likePost })(SinglePost));

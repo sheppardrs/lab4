@@ -24,6 +24,7 @@ class Post extends React.Component {
   }
 
   handleLike(e) {
+    this.props.onLike(this.props.post.id, this.props.history);
     console.log(`Like ${this.props.post.title}`);
   }
 
@@ -73,7 +74,8 @@ class Post extends React.Component {
                 tabIndex={-1}
                 className="fas fa-heart"
                 role="button"
-              />
+              > {this.props.post.likes}
+              </i>
             </div>
           </div>
           <div className="post-text">

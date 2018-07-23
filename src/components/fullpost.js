@@ -19,6 +19,7 @@ class FullPost extends React.Component {
   }
 
   handleLike(e) {
+    this.props.onLike(this.props.post._id, this.props.history);
     console.log(`Like ${this.props.post.title}`);
   }
 
@@ -49,6 +50,13 @@ class FullPost extends React.Component {
                 role="button"
               />
             </NavLink>
+            <i
+              onClick={this.handleLike}
+              tabIndex={-1}
+              className="fas fa-heart"
+              role="button"
+            > {this.props.post.likes}
+            </i>
           </div>
         </div>
         {/* <p>{this.props.post.text}</p> */}
