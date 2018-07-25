@@ -4,7 +4,9 @@ July 2018
 Built from course notes and assignments as well as stack exchange and [youtube](https://www.youtube.com/watch?v=Td-2D-_7Y2E&index=20&list=PLoYCgNOIyGABj2GQSlDRjgvXtqfDxKm5b).
 
 # Possible Updates
-Pass an ```onEdit``` prop with a function that creates the link to the ```Post``` and ```FullPost``` components so that they are really just presentational. 
+Pass an ```onEdit``` prop with a function that creates the link to the ```Post``` and ```FullPost``` components so that they are really just presentational. Style ```refresh``` button. Fix color scheme. Make ```sign out ``` be the same style and color as the other links in navbar. Make hamburger menu.
+
+# Do Some Extra Credit
 
 # Functionality
 From the assignment:
